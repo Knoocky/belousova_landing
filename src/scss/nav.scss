@@ -5,6 +5,7 @@
   margin-top: 40px;
   align-items: center;
   justify-content: space-between;
+  text-transform: uppercase;
 
   @media screen and (max-width: variables.$tablet) {
     margin-top: 20px;
@@ -17,7 +18,7 @@
     margin: 0;
     justify-content: space-between;
 
-    @media screen and (max-width: variables.$mobile) {
+    @media screen and (max-width: variables.$tablet) {
       display: none;
     }
 
@@ -28,7 +29,7 @@
 
     a {
       color: variables.$company-color;
-      font-weight: 700;
+      font-weight: 400;
       text-decoration: none;
 
       &:hover {

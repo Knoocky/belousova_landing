@@ -10,16 +10,17 @@ body {
 }
 
 h2 {
-  font-size: 52px;
+  font-size: 40px;
   font-weight: 400;
   margin: 0;
+  text-transform: uppercase;
 
   @media screen and (max-width: variables.$tablet) {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   @media screen and (max-width: variables.$mobile) {
-    font-size: 32px;
+    font-size: 26px;
   }
 }
 

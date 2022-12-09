@@ -2,6 +2,9 @@
 
 .accordion {
   padding-left: 30px;
+  max-width: 1024px;
+  margin: auto;
+  text-transform: lowercase;
 
   @media screen and (max-width: variables.$mobile) {
     padding-left: 0;
@@ -11,18 +14,18 @@
     display: flex;
     align-items: center;
     color: variables.$base-color;
-    font-size: 2em;
+    font-size: 1.75em;
     justify-content: space-between;
     padding: 20px 0;
     text-decoration: none;
     width: 100%;
 
     @media screen and (max-width: variables.$tablet) {
-      font-size: 1.5em;
+      font-size: 1.25em;
     }
 
     @media screen and (max-width: variables.$mobile) {
-      font-size: 1.2em;
+      font-size: 1em;
     }
 
     &::after {
@@ -46,7 +49,7 @@
     height: 0;
     overflow: hidden;
 
-    @media screen and (max-width: variables.$mobile) {
+    @media screen and (max-width: variables.$tablet) {
       font-size: 1em;
     }
 
