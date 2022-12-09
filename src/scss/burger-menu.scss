@@ -1,37 +1,47 @@
-@use "variables";
+@use 'variables';
 
 #burger-menu {
   z-index: 2;
 }
 
 #burger-menu-bar {
-  width: 45px;
+  width: 50px;
   height: 40px;
   cursor: pointer;
-  margin-left: 30px;
-  align-self: end;
+  margin-left: auto;
+  margin-right: 0;
+  border: none;
+  background-color: transparent;
+
+  @media screen and (min-width: variables.$desktop-medium) {
+    display: none;
+  }
 }
 
 .bar {
-  height: 5px;
+  height: 4px;
   width: 100%;
-  background-color: variables.$company-color;
+  background-color: #dc052d;
   display: block;
   border-radius: 5px;
   transition: 0.3s ease;
 }
 
 #bar1 {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
 }
 
 #bar3 {
-  transform: translateY(4px);
+  transform: translateY(5px);
 }
 
 .burger-menu-nav {
   transition: 0.3s ease;
   display: none;
+
+  @media screen and (min-width: variables.$desktop-medium) {
+    display: block;
+  }
 
   ul {
     padding: 0;
@@ -43,37 +53,31 @@
     padding: 12px 0;
 
     a {
-      color: white;
-      font-size: 20px;
-      text-decoration: none;
-
-      &:hover {
-        font-weight: bold;
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
       }
-    }
   }
 }
 
+.burger-menu-bg,
 #burger-menu {
-  top: 20px;
+  top: 50px;
   right: 30px;
   position: absolute;
 
-  display: flex;
-  flex-direction: column;
+  @media screen and (min-width: variables.$desktop-medium) {
+    top: 30px;
+  }
 }
 
 .burger-menu-bg {
-  position: absolute;
   z-index: 1;
   width: 0;
   height: 0;
-  background-image: url(../img/circle.svg);
-  background-repeat: no-repeat;
-  background-position: top -150px right -300px;
+  background: radial-gradient(circle, #dc052d, #dc052d);
+  border-radius: 50%;
   transition: 0.3s ease;
-  top: -40px;
-  right: 0;
 }
 
 .changed {
@@ -92,18 +96,12 @@
   }
 
   #bar3 {
-    transform: translateY(-6px) rotateZ(45deg);
+    transform: translateY(-4px) rotateZ(45deg);
   }
 }
 
 .changed-bg {
   width: 520px;
   height: 460px;
-}
-
-#burger-menu,
-#burger-menu-bg {
-  @media screen and (min-width: variables.$mobile) {
-    display: none;
-  }
+  transform: translate(60%, -35%);
 }

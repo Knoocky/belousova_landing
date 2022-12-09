@@ -1,38 +1,37 @@
 @use 'variables';
 
 .nav {
-  display: flex;
-  margin-top: 40px;
-  align-items: center;
-  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 240px;
+  height: 360px;
+  overflow: hidden;
 
-  @media screen and (max-width: variables.$tablet) {
-    margin-top: 20px;
+  @media screen and (min-width: variables.$desktop-medium) {
+    position: static;
+    width: auto;
+    height: auto;
   }
 
-  &__links {
-    display: flex;
-    font-size: 1.2em;
-    padding: 0;
-    margin: 0;
-    justify-content: space-between;
-
-    @media screen and (max-width: variables.$mobile) {
-      display: none;
-    }
-
-    li {
-      list-style: none;
-      margin-left: 1em;
+  &__links ul {
+    @media screen and (min-width: variables.$desktop-medium) {
+      display: grid;
+      grid-auto-flow: column;
+      grid-column-gap: 16px;
     }
 
     a {
-      color: variables.$company-color;
-      font-weight: 700;
+      color: white;
       text-decoration: none;
+      transition: color 0.3s ease-in-out;
 
-      &:hover {
-        text-decoration: underline;
+      @media screen and (min-width: variables.$desktop-medium) {
+        color: variables.$company-color;
+
+        &:hover {
+          color: #f86f6a;
+        }
       }
     }
   }
